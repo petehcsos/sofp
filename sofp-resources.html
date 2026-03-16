@@ -1,0 +1,2654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Counselling Resources | Community SOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crimson:   #990033;
+      --crimson-light: #f1dada;
+      --blue:      #366091;
+      --blue-light: #dde6f0;
+      --cream:     #F6F4EF;
+      --white:     #FFFFFF;
+      --text:      #1C1C1C;
+      --muted:     #6B6B6B;
+      --border:    #DDD9D0;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--crimson);
+      color: var(--white);
+      padding: 2rem 2.5rem 1.8rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+    header .inner { max-width: 1200px; margin: 0 auto; }
+    header h1 {
+      font-family: 'Lora', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.78;
+      margin-top: 0.25rem;
+    }
+
+    /* ── LAYOUT ── */
+    .page { max-width: 1200px; margin: 0 auto; display: flex; gap: 0; padding: 0; }
+
+    /* ── SIDEBAR ── */
+    aside {
+      width: 230px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 85px;
+      height: calc(100vh - 85px);
+      overflow-y: auto;
+      padding: 1.5rem 0 2rem 1.5rem;
+      border-right: 1px solid var(--border);
+      background: var(--cream);
+    }
+    aside h2 {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    aside ul { list-style: none; }
+    aside ul li { margin: 0; }
+    aside ul li a {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 0.28rem 0.5rem;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+      font-weight: 500;
+    }
+    aside ul li a:hover { background: var(--crimson-light); color: var(--crimson); }
+    aside ul li.group-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      padding: 0.8rem 0.5rem 0.2rem;
+    }
+
+    /* ── MAIN CONTENT ── */
+    main { flex: 1; padding: 2rem 2rem 4rem 2.5rem; min-width: 0; }
+
+    /* ── INTRO ── */
+    .intro {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--blue);
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .intro strong { color: var(--text); }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 3rem; scroll-margin-top: 95px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--crimson);
+    }
+    .section-header h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--crimson);
+    }
+
+    /* ── CATEGORY ── */
+    .category {
+      margin-bottom: 1.1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.15s;
+      scroll-margin-top: 120px;
+    .category:target { box-shadow: 0 0 0 2px var(--sage-mid); }
+    .category:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+
+    .category-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: var(--crimson-light);
+      border-bottom: 1px solid #e0c4c4;
+    }
+    .category-head h3 {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--crimson);
+    }
+    .anchor-tag {
+      font-family: 'Source Sans 3', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      background: #EDEDEA;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+      user-select: all;
+      flex-shrink: 0;
+    }
+
+    .resources { padding: 0.6rem 1rem 0.8rem; }
+    .resource-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid #F0EDE7;
+      font-size: 0.875rem;
+    }
+    .resource-item:last-child { border-bottom: none; }
+    .resource-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--crimson);
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+    }
+    .resource-body { flex: 1; }
+    .resource-body a {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+    .resource-body a:hover { text-decoration: underline; color: var(--crimson); }
+    .resource-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--crimson);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+    }
+    footer strong { color: var(--white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      aside { display: none; }
+      header h1 { font-size: 1.2rem; }
+      main { padding: 1.5rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <h1>Financial Counselling Resources</h1>
+    <p>Independent resources for each category on the Statement of Financial Position</p>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside>
+    <h2>Jump to section</h2>
+    <ul>
+      <li class="group-label">Income</li>
+      <li><a href="#after-tax-salary">After Tax Salary</a></li>
+      <li><a href="#investments-interest">Investments / Interest</a></li>
+      <li><a href="#rental-income">Rental Income or Board</a></li>
+      <li><a href="#centrelink">Centrelink</a></li>
+      <li><a href="#family-tax-benefit-a">Family Tax Benefit A</a></li>
+      <li><a href="#family-tax-benefit-b">Family Tax Benefit B</a></li>
+      <li><a href="#rent-assistance">Rent Assistance</a></li>
+      <li><a href="#child-support-income">Child Support (received)</a></li>
+      <li class="group-label">Housing</li>
+      <li><a href="#rent">Rent</a></li>
+      <li><a href="#rates">Rates</a></li>
+      <li><a href="#insurance-home-contents">Insurance — Home &amp; Contents</a></li>
+      <li><a href="#repairs-maintenance">Repairs and Maintenance</a></li>
+      <li><a href="#landlord-insurance">Landlord Insurance</a></li>
+      <li><a href="#storage">Storage</a></li>
+      <li><a href="#body-corporate">Body Corporate / Strata</a></li>
+      <li class="group-label">Utilities</li>
+      <li><a href="#electricity">Electricity</a></li>
+      <li><a href="#gas">Gas</a></li>
+      <li><a href="#water">Water</a></li>
+      <li><a href="#mobile">Mobile / TIO</a></li>
+      <li><a href="#internet-landline">Internet / Landline</a></li>
+      <li><a href="#streaming">Streaming</a></li>
+      <li class="group-label">Transport</li>
+      <li><a href="#petrol">Petrol</a></li>
+      <li><a href="#registration">Registration</a></li>
+      <li><a href="#vehicle-repairs">Service / Tyres / Repairs</a></li>
+      <li><a href="#car-insurance">Car Insurance</a></li>
+      <li><a href="#tolls">Tolls</a></li>
+      <li><a href="#roadside-assist">Roadside Assist</a></li>
+      <li><a href="#parking">Parking</a></li>
+      <li><a href="#drivers-licence">Drivers Licence</a></li>
+      <li class="group-label">Children &amp; Education</li>
+      <li><a href="#child-care">Child Care</a></li>
+      <li><a href="#nappies-formula">Nappies, Formula etc.</a></li>
+      <li><a href="#child-support-payment">Child Support (paying)</a></li>
+      <li><a href="#extra-curricular">Extra-curricular Activities</a></li>
+      <li><a href="#laptops-devices">Laptops / Devices</a></li>
+      <li><a href="#pocket-money">Pocket Money</a></li>
+      <li><a href="#school-books">School Books and Photos</a></li>
+      <li><a href="#school-excursions">School Excursions and Camps</a></li>
+      <li><a href="#school-fees">School Fees or Levies</a></li>
+      <li><a href="#uniforms-clothing">Uniforms and Clothing</a></li>
+      <li><a href="#self-education">Self Education</a></li>
+      <li><a href="#professional-development">Professional Development</a></li>
+      <li><a href="#membership-union">Membership / Union Fees</a></li>
+      <li><a href="#uniforms-work">Uniforms for Work</a></li>
+      <li class="group-label">Insurance &amp; Health</li>
+      <li><a href="#health-insurance">Health Insurance</a></li>
+      <li><a href="#life-insurance">Life Insurance</a></li>
+      <li><a href="#funeral-insurance">Funeral Insurance</a></li>
+      <li><a href="#doctors-specialists">Doctors and Specialists</a></li>
+      <li><a href="#medications">Medications</a></li>
+      <li><a href="#dentist">Dentist</a></li>
+      <li><a href="#optometrist">Optometrist / Glasses</a></li>
+      <li><a href="#hearing-aids">Hearing Aids</a></li>
+      <li class="group-label">Food &amp; Personal</li>
+      <li><a href="#food-groceries">Food and Groceries</a></li>
+      <li><a href="#takeaway-dining">Takeaway / Dining</a></li>
+      <li><a href="#clothing-shoes">Clothing and Shoes</a></li>
+      <li><a href="#personal-care">Haircuts and Personal Care</a></li>
+      <li><a href="#white-goods">White Goods / Linen</a></li>
+      <li class="group-label">Savings &amp; Super</li>
+      <li><a href="#savings">Savings</a></li>
+      <li><a href="#superannuation-contributions">Super — Voluntary Contributions</a></li>
+      <li class="group-label">Lifestyle</li>
+      <li><a href="#newspapers-magazines">Newspapers and Magazines</a></li>
+      <li><a href="#online-subscriptions">Online Subscriptions</a></li>
+      <li><a href="#gym-membership">Gym Membership</a></li>
+      <li><a href="#sport-hobbies">Sport / Hobbies</a></li>
+      <li><a href="#celebrations">Celebrations</a></li>
+      <li><a href="#gifts">Gifts</a></li>
+      <li><a href="#donations">Donations</a></li>
+      <li><a href="#entertainment">Entertainment</a></li>
+      <li><a href="#holidays">Holidays</a></li>
+      <li><a href="#pets-food">Pet — Food / Accessories</a></li>
+      <li><a href="#pets-vet">Pet — Vet / Insurance</a></li>
+      <li><a href="#pet-registration">Pet — Registration</a></li>
+      <li><a href="#gambling">Gambling</a></li>
+      <li><a href="#smoking">Cigarettes / Vapes</a></li>
+      <li><a href="#alcohol">Alcohol</a></li>
+      <li class="group-label">Assets</li>
+      <li><a href="#motor-vehicle">Motor Vehicle</a></li>
+      <li><a href="#boat">Boat</a></li>
+      <li><a href="#caravan">Caravan</a></li>
+      <li><a href="#motorbike">Motorbike</a></li>
+      <li><a href="#investments-asset">Investments</a></li>
+      <li><a href="#savings-asset">Savings</a></li>
+      <li><a href="#superannuation-asset">Superannuation</a></li>
+      <li><a href="#shares">Shares</a></li>
+      <li><a href="#household-contents">Household Contents</a></li>
+      <li><a href="#tools-of-trade">Tools of Trade</a></li>
+      <li><a href="#valuables">Valuables</a></li>
+      <li class="group-label">Creditors / Debts</li>
+      <li><a href="#property-loans">Property Loans</a></li>
+      <li><a href="#secured-loans">Secured Loans</a></li>
+      <li><a href="#unsecured-debts">Unsecured Debts</a></li>
+      <li><a href="#government-debts">Government Debts</a></li>
+      <li><a href="#utility-arrears">Utility Arrears</a></li>
+      <li><a href="#debt-collectors">Debt Collectors</a></li>
+      <li><a href="#formal-debt-options">Formal Debt Options</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <div class="intro">
+      <strong>About this page:</strong> These resources are provided for general information only. All links go to independent government, community sector or regulatory websites. Resources are relevant to NSW residents. The anchor tags shown on each category (e.g. <code>#electricity</code>) can be used to create direct hyperlinks from the Statement of Financial Position.
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         INCOME
+    ══════════════════════════════════════════ -->
+    <div class="section" id="income">
+      <div class="section-header">
+        <h2>Income</h2>
+      </div>
+
+      <div class="category" id="after-tax-salary">
+        <div class="category-head">
+          <h3>After Tax Salary</h3>
+          <span class="anchor-tag">#after-tax-salary</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/calculators-and-tools/tax-withheld-calculator" target="_blank" rel="noopener">ATO Tax Withheld Calculator</a>
+              <div class="resource-desc">Check whether the right amount of tax is being withheld from wages or salary.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/work-and-tax/income-tax" target="_blank" rel="noopener">Moneysmart &mdash; Income Tax</a>
+              <div class="resource-desc">Plain English overview of how income tax works, including marginal rates and offsets.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://calculate.fairwork.gov.au/" target="_blank" rel="noopener">Fair Work Pay Calculator</a>
+              <div class="resource-desc">Calculate minimum pay rates, allowances and entitlements under awards and agreements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="investments-interest">
+        <div class="category-head">
+          <h3>Investments / Interest</h3>
+          <span class="anchor-tag">#investments-interest</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/investments-and-assets" target="_blank" rel="noopener">ATO &mdash; Investments and Assets</a>
+              <div class="resource-desc">Tax obligations on interest, dividends and other investment income.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/investing" target="_blank" rel="noopener">Moneysmart &mdash; Investing</a>
+              <div class="resource-desc">Guide to understanding different types of investment and associated risks.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="rental-income">
+        <div class="category-head">
+          <h3>Rental Income or Board</h3>
+          <span class="anchor-tag">#rental-income</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/investments-and-assets/rental-properties" target="_blank" rel="noopener">ATO &mdash; Rental Properties</a>
+              <div class="resource-desc">Tax treatment of rental income, allowable deductions and record-keeping requirements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="centrelink">
+        <div class="category-head">
+          <h3>Centrelink (before deductions)</h3>
+          <span class="anchor-tag">#centrelink</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/payment-and-service-finder" target="_blank" rel="noopener">Services Australia &mdash; Payment and Service Finder</a>
+              <div class="resource-desc">Find out which Centrelink payments a person may be eligible for based on their situation.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://my.gov.au/" target="_blank" rel="noopener">myGov</a>
+              <div class="resource-desc">Access and manage Centrelink payments and correspondence online.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="family-tax-benefit-a">
+        <div class="category-head">
+          <h3>Family Tax Benefit A</h3>
+          <span class="anchor-tag">#family-tax-benefit-a</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/family-tax-benefit-part-a-and-part-b" target="_blank" rel="noopener">Services Australia &mdash; Family Tax Benefit Part A</a>
+              <div class="resource-desc">Eligibility, current rates, income limits and how to claim FTB Part A for dependent children.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="family-tax-benefit-b">
+        <div class="category-head">
+          <h3>Family Tax Benefit B</h3>
+          <span class="anchor-tag">#family-tax-benefit-b</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/family-tax-benefit-part-a-and-part-b" target="_blank" rel="noopener">Services Australia &mdash; Family Tax Benefit Part B</a>
+              <div class="resource-desc">Eligibility and rates for single-income and single-parent families, including the immunisation requirements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="rent-assistance">
+        <div class="category-head">
+          <h3>Rent Assistance</h3>
+          <span class="anchor-tag">#rent-assistance</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/rent-assistance" target="_blank" rel="noopener">Services Australia &mdash; Rent Assistance</a>
+              <div class="resource-desc">Check eligibility, current threshold amounts and maximum rates for Rent Assistance.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="child-support-income">
+        <div class="category-head">
+          <h3>Child Support (received)</h3>
+          <span class="anchor-tag">#child-support-income</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/child-support" target="_blank" rel="noopener">Services Australia &mdash; Child Support</a>
+              <div class="resource-desc">How the child support scheme works, including assessment and collection options.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/child-support-estimator" target="_blank" rel="noopener">Services Australia &mdash; Child Support Estimator</a>
+              <div class="resource-desc">Estimate child support amounts based on income and care arrangements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /income -->
+
+
+    <!-- ══════════════════════════════════════════
+         HOUSING
+    ══════════════════════════════════════════ -->
+    <div class="section" id="housing">
+      <div class="section-header">
+        <h2>Housing</h2>
+      </div>
+
+      <div class="category" id="rent">
+        <div class="category-head">
+          <h3>Rent</h3>
+          <span class="anchor-tag">#rent</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.tenants.org.au/" target="_blank" rel="noopener">Tenants' Union NSW</a>
+              <div class="resource-desc">Comprehensive guides on tenant rights, rent increases, ending tenancies and disputes in NSW.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairtrading.nsw.gov.au/housing-and-property/renting" target="_blank" rel="noopener">NSW Fair Trading &mdash; Renting</a>
+              <div class="resource-desc">Official NSW government information on rights and responsibilities for tenants and landlords.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ncat.nsw.gov.au/" target="_blank" rel="noopener">NSW Civil and Administrative Tribunal (NCAT)</a>
+              <div class="resource-desc">Resolve rental disputes about bonds, repairs, rent increases and terminations.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="rates">
+        <div class="category-head">
+          <h3>Rates</h3>
+          <span class="anchor-tag">#rates</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax" target="_blank" rel="noopener">Revenue NSW &mdash; Land Tax</a>
+              <div class="resource-desc">Information on land tax obligations, thresholds, exemptions and payment options.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.revenue.nsw.gov.au/help-centre/financial-hardship" target="_blank" rel="noopener">Revenue NSW &mdash; Financial Hardship</a>
+              <div class="resource-desc">Help for people who cannot pay their rates or land tax due to financial hardship.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="insurance-home-contents">
+        <div class="category-head">
+          <h3>Insurance &mdash; House and/or Contents</h3>
+          <span class="anchor-tag">#insurance-home-contents</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/home-insurance" target="_blank" rel="noopener">Moneysmart &mdash; Home Insurance</a>
+              <div class="resource-desc">What to look for in a home and contents policy, and how to compare cover.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">Australian Financial Complaints Authority (AFCA)</a>
+              <div class="resource-desc">Lodge a complaint about a home or contents insurer. Free and independent service.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="repairs-maintenance">
+        <div class="category-head">
+          <h3>Repairs and Maintenance</h3>
+          <span class="anchor-tag">#repairs-maintenance</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.tenants.org.au/factsheet-02-repairs" target="_blank" rel="noopener">Tenants' Union NSW &mdash; Repairs Factsheet</a>
+              <div class="resource-desc">Explains urgent vs non-urgent repairs, and how tenants can compel landlords to act.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairtrading.nsw.gov.au/housing-and-property/renting/during-a-tenancy/repairs-and-maintenance" target="_blank" rel="noopener">NSW Fair Trading &mdash; Repairs and Maintenance</a>
+              <div class="resource-desc">Landlord and tenant responsibilities for keeping a rental property in good repair.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="landlord-insurance">
+        <div class="category-head">
+          <h3>Landlord Insurance</h3>
+          <span class="anchor-tag">#landlord-insurance</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">Australian Financial Complaints Authority (AFCA)</a>
+              <div class="resource-desc">Free, independent dispute resolution if a landlord insurance claim is denied or disputed.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/how-to-do-a-financial-health-check/insurance" target="_blank" rel="noopener">Moneysmart &mdash; Insurance Overview</a>
+              <div class="resource-desc">General guidance on understanding insurance products and knowing your rights.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="storage">
+        <div class="category-head">
+          <h3>Storage</h3>
+          <span class="anchor-tag">#storage</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairtrading.nsw.gov.au/consumers/resolving-a-problem" target="_blank" rel="noopener">NSW Fair Trading &mdash; Resolving a Problem</a>
+              <div class="resource-desc">Consumer rights when dealing with storage facilities, including disputes and lost goods.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="body-corporate">
+        <div class="category-head">
+          <h3>Body Corporate / Strata Fees</h3>
+          <span class="anchor-tag">#body-corporate</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairtrading.nsw.gov.au/housing-and-property/strata-and-community-title" target="_blank" rel="noopener">NSW Fair Trading &mdash; Strata and Community Title</a>
+              <div class="resource-desc">Rights and obligations for owners and residents in strata schemes, including levies and disputes.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ncat.nsw.gov.au/" target="_blank" rel="noopener">NCAT &mdash; Strata Disputes</a>
+              <div class="resource-desc">Resolving disputes with strata committees or other owners through the tribunal.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /housing -->
+
+
+    <!-- ══════════════════════════════════════════
+         UTILITIES
+    ══════════════════════════════════════════ -->
+    <div class="section" id="utilities">
+      <div class="section-header">
+        <h2>Utilities</h2>
+      </div>
+
+      <div class="category" id="electricity">
+        <div class="category-head">
+          <h3>Electricity</h3>
+          <span class="anchor-tag">#electricity</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.energymadeeasy.gov.au/" target="_blank" rel="noopener">Energy Made Easy (AER)</a>
+              <div class="resource-desc">Government comparison tool to find better electricity deals in NSW. Run by the Australian Energy Regulator.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.energy.nsw.gov.au/households/rebates-and-assistance" target="_blank" rel="noopener">NSW Government &mdash; Energy Rebates and Assistance</a>
+              <div class="resource-desc">NSW rebates for low income households, medical needs, and energy bill relief programs.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ewon.com.au/" target="_blank" rel="noopener">Energy &amp; Water Ombudsman NSW (EWON)</a>
+              <div class="resource-desc">Free, independent complaints and dispute resolution for electricity billing and hardship issues.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/energy-supplement" target="_blank" rel="noopener">Services Australia &mdash; Energy Supplement</a>
+              <div class="resource-desc">Ongoing assistance with energy costs for Centrelink payment recipients.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="gas">
+        <div class="category-head">
+          <h3>Gas</h3>
+          <span class="anchor-tag">#gas</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.energymadeeasy.gov.au/" target="_blank" rel="noopener">Energy Made Easy (AER)</a>
+              <div class="resource-desc">Compare gas plans and retailers across NSW. Government tool, no commercial bias.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ewon.com.au/" target="_blank" rel="noopener">Energy &amp; Water Ombudsman NSW (EWON)</a>
+              <div class="resource-desc">Complaints and hardship assistance for gas billing disputes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="water">
+        <div class="category-head">
+          <h3>Water</h3>
+          <span class="anchor-tag">#water</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ewon.com.au/" target="_blank" rel="noopener">Energy &amp; Water Ombudsman NSW (EWON)</a>
+              <div class="resource-desc">Dispute resolution for water billing and hardship issues across NSW water utilities.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.sydneywater.com.au/accounts-billing/trouble-paying-your-bill.html" target="_blank" rel="noopener">Sydney Water &mdash; Trouble Paying Your Bill</a>
+              <div class="resource-desc">Hardship assistance, flexible payment plans and rebates from Sydney Water.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.hunterwater.com.au/accounts-and-billing/financial-hardship/" target="_blank" rel="noopener">Hunter Water &mdash; Financial Hardship</a>
+              <div class="resource-desc">Payment assistance and hardship programs for Hunter Water customers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="mobile">
+        <div class="category-head">
+          <h3>Mobile / TIO</h3>
+          <span class="anchor-tag">#mobile</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.tio.com.au/" target="_blank" rel="noopener">Telecommunications Industry Ombudsman (TIO)</a>
+              <div class="resource-desc">Free, independent complaints service for unresolved mobile phone disputes.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.accc.gov.au/consumers/internet-and-telecommunications" target="_blank" rel="noopener">ACCC &mdash; Telecommunications</a>
+              <div class="resource-desc">Consumer rights information for mobile services, including billing and contract disputes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="internet-landline">
+        <div class="category-head">
+          <h3>Home Internet / Landline</h3>
+          <span class="anchor-tag">#internet-landline</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.tio.com.au/" target="_blank" rel="noopener">Telecommunications Industry Ombudsman (TIO)</a>
+              <div class="resource-desc">Complaints about internet and landline services, including NBN connection issues.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.accc.gov.au/consumers/internet-and-telecommunications/internet-services" target="_blank" rel="noopener">ACCC &mdash; Internet Services</a>
+              <div class="resource-desc">Your rights regarding internet speeds, NBN promises and service reliability.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="streaming">
+        <div class="category-head">
+          <h3>Streaming (Foxtel, Netflix etc.)</h3>
+          <span class="anchor-tag">#streaming</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.accc.gov.au/consumers/buying-products-and-services/subscriptions" target="_blank" rel="noopener">ACCC &mdash; Subscriptions and Recurring Charges</a>
+              <div class="resource-desc">Your rights when cancelling subscriptions, including free trials that convert to paid.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/budgeting/budget-planner" target="_blank" rel="noopener">Moneysmart &mdash; Budget Planner</a>
+              <div class="resource-desc">Track and review subscription costs as part of an overall household budget.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /utilities -->
+
+
+    <!-- ══════════════════════════════════════════
+         TRANSPORT
+    ══════════════════════════════════════════ -->
+    <div class="section" id="transport">
+      <div class="section-header">
+        <h2>Transport</h2>
+      </div>
+
+      <div class="category" id="petrol">
+        <div class="category-head">
+          <h3>Petrol</h3>
+          <span class="anchor-tag">#petrol</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fuelcheck.nsw.gov.au/" target="_blank" rel="noopener">FuelCheck NSW</a>
+              <div class="resource-desc">NSW Government tool to find the cheapest fuel at nearby service stations in real time.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.accc.gov.au/consumers/petrol-and-gas/petrol-prices" target="_blank" rel="noopener">ACCC &mdash; Petrol Price Monitoring</a>
+              <div class="resource-desc">ACCC petrol price data and advice on finding the best price cycle days.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="registration">
+        <div class="category-head">
+          <h3>Registration</h3>
+          <span class="anchor-tag">#registration</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/transaction/renew-vehicle-registration" target="_blank" rel="noopener">Service NSW &mdash; Vehicle Registration</a>
+              <div class="resource-desc">Renew, check or transfer vehicle registration, including concession options.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/concession" target="_blank" rel="noopener">Service NSW &mdash; Concessions</a>
+              <div class="resource-desc">Check eligibility for discounted registration through concession card holder arrangements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="vehicle-repairs">
+        <div class="category-head">
+          <h3>Service / Tyres / Repairs</h3>
+          <span class="anchor-tag">#vehicle-repairs</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairtrading.nsw.gov.au/trades-and-businesses/licensing-and-qualifications/motor-industry/motor-vehicle-repair-industry" target="_blank" rel="noopener">NSW Fair Trading &mdash; Motor Vehicle Repair Industry</a>
+              <div class="resource-desc">Consumer rights when dealing with mechanics, including getting quotes and disputing charges.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.accc.gov.au/consumers/cars-and-other-vehicles" target="_blank" rel="noopener">ACCC &mdash; Cars and Vehicles</a>
+              <div class="resource-desc">Consumer guarantees for vehicle repairs and your rights when work is done poorly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="car-insurance">
+        <div class="category-head">
+          <h3>Car Insurance</h3>
+          <span class="anchor-tag">#car-insurance</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/car-insurance" target="_blank" rel="noopener">Moneysmart &mdash; Car Insurance</a>
+              <div class="resource-desc">Comparing comprehensive, third party and CTP cover, including what each policy covers.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.sira.nsw.gov.au/insurance-cover-in-nsw/CTP-insurance" target="_blank" rel="noopener">SIRA &mdash; CTP Insurance NSW</a>
+              <div class="resource-desc">State Insurance Regulatory Authority information on Compulsory Third Party (green slip) insurance.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">AFCA &mdash; Insurance Disputes</a>
+              <div class="resource-desc">Free dispute resolution for denied or disputed car insurance claims.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="tolls">
+        <div class="category-head">
+          <h3>Tolls</h3>
+          <span class="anchor-tag">#tolls</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/campaign/toll-relief" target="_blank" rel="noopener">Service NSW &mdash; Toll Relief</a>
+              <div class="resource-desc">NSW Government rebate for regular toll road users spending over the annual threshold.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="roadside-assist">
+        <div class="category-head">
+          <h3>Roadside Assist</h3>
+          <span class="anchor-tag">#roadside-assist</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/car-costs" target="_blank" rel="noopener">Moneysmart &mdash; True Cost of a Car</a>
+              <div class="resource-desc">Calculator and guidance for understanding total vehicle running costs including roadside cover.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="parking">
+        <div class="category-head">
+          <h3>Parking</h3>
+          <span class="anchor-tag">#parking</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.revenue.nsw.gov.au/fines" target="_blank" rel="noopener">Revenue NSW &mdash; Fines</a>
+              <div class="resource-desc">Options for managing parking fines, including internal review, payment plans and hardship.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="drivers-licence">
+        <div class="category-head">
+          <h3>Drivers Licence</h3>
+          <span class="anchor-tag">#drivers-licence</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/transaction/apply-for-a-drivers-licence" target="_blank" rel="noopener">Service NSW &mdash; Driver Licences</a>
+              <div class="resource-desc">Renew, replace or upgrade your licence, including costs and identity requirements.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.revenue.nsw.gov.au/fines/your-fines/driver-licence-suspension" target="_blank" rel="noopener">Revenue NSW &mdash; Licence Suspension for Fines</a>
+              <div class="resource-desc">Options if your licence has been suspended due to unpaid fines, including work and development orders.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /transport -->
+
+
+    <!-- ══════════════════════════════════════════
+         CHILDREN, EDUCATION & WORK
+    ══════════════════════════════════════════ -->
+    <div class="section" id="children-education">
+      <div class="section-header">
+        <h2>Children, Self Education &amp; Work Expenses</h2>
+      </div>
+
+      <div class="category" id="child-care">
+        <div class="category-head">
+          <h3>Child Care / Pre-school / After-school Care</h3>
+          <span class="anchor-tag">#child-care</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/child-care-subsidy" target="_blank" rel="noopener">Services Australia &mdash; Child Care Subsidy</a>
+              <div class="resource-desc">Eligibility, activity test requirements and how to claim the Child Care Subsidy (CCS).</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.education.gov.au/early-childhood/child-care-subsidy" target="_blank" rel="noopener">Department of Education &mdash; Child Care Subsidy</a>
+              <div class="resource-desc">Government policy information on the Child Care Subsidy system and approved providers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="nappies-formula">
+        <div class="category-head">
+          <h3>Disposable Nappies, Wipes, Formula etc.</h3>
+          <span class="anchor-tag">#nappies-formula</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/newborn-upfront-payment-and-newborn-supplement" target="_blank" rel="noopener">Services Australia &mdash; Newborn Supplement</a>
+              <div class="resource-desc">Lump sum and ongoing supplement for families with a new baby or recently adopted child.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.givit.org.au/" target="_blank" rel="noopener">GIVIT &mdash; Essential Items for Families</a>
+              <div class="resource-desc">Request essential baby items including nappies and formula through this not-for-profit platform.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.foodbank.org.au/nsw/" target="_blank" rel="noopener">Foodbank NSW &amp; ACT</a>
+              <div class="resource-desc">Emergency food relief including baby supplies for families in need.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="child-support-payment">
+        <div class="category-head">
+          <h3>Child Support Payment (paying)</h3>
+          <span class="anchor-tag">#child-support-payment</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/child-support" target="_blank" rel="noopener">Services Australia &mdash; Child Support</a>
+              <div class="resource-desc">How child support assessments are calculated and options if you cannot pay.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.legalaid.nsw.gov.au/what-legal-aid-covers/family-law" target="_blank" rel="noopener">Legal Aid NSW &mdash; Family Law</a>
+              <div class="resource-desc">Free or low-cost legal help with child support disputes and appeals.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="extra-curricular">
+        <div class="category-head">
+          <h3>Extra-curricular Activities (Sport &amp; Music etc.)</h3>
+          <span class="anchor-tag">#extra-curricular</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/transaction/apply-for-an-active-kids-voucher" target="_blank" rel="noopener">Service NSW &mdash; Active Kids</a>
+              <div class="resource-desc">NSW Government vouchers to offset the cost of sport and active recreation for school-aged children.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/transaction/apply-for-a-creative-kids-voucher" target="_blank" rel="noopener">Service NSW &mdash; Creative Kids</a>
+              <div class="resource-desc">Vouchers toward the cost of creative and cultural activities for school-aged children.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="laptops-devices">
+        <div class="category-head">
+          <h3>Laptops, iPads etc.</h3>
+          <span class="anchor-tag">#laptops-devices</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://education.nsw.gov.au/" target="_blank" rel="noopener">NSW Department of Education</a>
+              <div class="resource-desc">Information on device programs and digital access support available to students in NSW schools.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://goodshepherd.org.au/money/nils/" target="_blank" rel="noopener">Good Shepherd &mdash; No Interest Loans Scheme (NILS)</a>
+              <div class="resource-desc">Interest-free loans of up to $2,000 for essential goods including computers and devices.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="pocket-money">
+        <div class="category-head">
+          <h3>Pocket Money</h3>
+          <span class="anchor-tag">#pocket-money</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/teaching-kids-about-money" target="_blank" rel="noopener">Moneysmart &mdash; Teaching Kids About Money</a>
+              <div class="resource-desc">Age-appropriate resources for helping children develop healthy money habits.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="school-books">
+        <div class="category-head">
+          <h3>School Books and Photos</h3>
+          <span class="anchor-tag">#school-books</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://education.nsw.gov.au/schooling/going-to-school/learning-at-school/financial-assistance" target="_blank" rel="noopener">NSW Department of Education &mdash; Financial Assistance</a>
+              <div class="resource-desc">School-based assistance including the Assisted School Travel Program and cost relief schemes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="school-excursions">
+        <div class="category-head">
+          <h3>School Excursions and Camps</h3>
+          <span class="anchor-tag">#school-excursions</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://education.nsw.gov.au/schooling/going-to-school/learning-at-school/financial-assistance" target="_blank" rel="noopener">NSW Department of Education &mdash; Financial Assistance</a>
+              <div class="resource-desc">Programs to support families with the cost of school activities and excursions.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.thesmithfamily.com.au/" target="_blank" rel="noopener">The Smith Family</a>
+              <div class="resource-desc">Educational assistance programs for children from low-income families, including activity support.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="school-fees">
+        <div class="category-head">
+          <h3>School Fees or Levies</h3>
+          <span class="anchor-tag">#school-fees</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://education.nsw.gov.au/schooling/going-to-school/learning-at-school/financial-assistance" target="_blank" rel="noopener">NSW Department of Education &mdash; Financial Assistance</a>
+              <div class="resource-desc">Help with school-related costs for families experiencing financial difficulty.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.pandc.org.au/" target="_blank" rel="noopener">P&amp;C Federation NSW</a>
+              <div class="resource-desc">Information on what schools can and cannot charge, and how to raise concerns about fees.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="uniforms-clothing">
+        <div class="category-head">
+          <h3>Uniforms, Shoes and General Clothing (Children)</h3>
+          <span class="anchor-tag">#uniforms-clothing</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.thesmithfamily.com.au/" target="_blank" rel="noopener">The Smith Family &mdash; Learning for Life</a>
+              <div class="resource-desc">Support for school uniforms and essentials for children from low-income families.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.salvationarmy.org.au/" target="_blank" rel="noopener">Salvation Army &mdash; Emergency Relief</a>
+              <div class="resource-desc">Emergency assistance for clothing, shoes and school supplies through local Salvos stores and services.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="self-education">
+        <div class="category-head">
+          <h3>Self Education</h3>
+          <span class="anchor-tag">#self-education</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.studyassist.gov.au/" target="_blank" rel="noopener">Study Assist (Australian Government)</a>
+              <div class="resource-desc">Government information on student loans, HECS-HELP and financial assistance for higher education.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-expenses/self-education-expenses" target="_blank" rel="noopener">ATO &mdash; Self-Education Expenses</a>
+              <div class="resource-desc">What self-education expenses can be claimed as tax deductions when study is work-related.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="professional-development">
+        <div class="category-head">
+          <h3>Professional Development</h3>
+          <span class="anchor-tag">#professional-development</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-expenses/self-education-expenses" target="_blank" rel="noopener">ATO &mdash; Work-Related Education Expenses</a>
+              <div class="resource-desc">Tax deductions available for training and professional development costs related to your current work.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairwork.gov.au/leave/other-types-of-leave/study-and-training-leave" target="_blank" rel="noopener">Fair Work &mdash; Study and Training Leave</a>
+              <div class="resource-desc">Entitlements to study and training leave under the National Employment Standards.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="membership-union">
+        <div class="category-head">
+          <h3>Membership, Licence &amp; Union Fees for Work</h3>
+          <span class="anchor-tag">#membership-union</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim" target="_blank" rel="noopener">ATO &mdash; Work-Related Deductions</a>
+              <div class="resource-desc">Union fees, professional memberships and work licences are generally tax deductible. Check eligibility here.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="uniforms-work">
+        <div class="category-head">
+          <h3>Uniforms for Work</h3>
+          <span class="anchor-tag">#uniforms-work</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/clothing-laundry-and-dry-cleaning-expenses" target="_blank" rel="noopener">ATO &mdash; Clothing and Uniform Expenses</a>
+              <div class="resource-desc">What work clothing and uniforms can be claimed as tax deductions and the record-keeping required.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /children-education -->
+
+
+    <!-- ══════════════════════════════════════════
+         INSURANCE & HEALTH
+    ══════════════════════════════════════════ -->
+    <div class="section" id="insurance-health">
+      <div class="section-header">
+        <h2>Insurance &amp; Health</h2>
+      </div>
+
+      <div class="category" id="health-insurance">
+        <div class="category-head">
+          <h3>Health Insurance</h3>
+          <span class="anchor-tag">#health-insurance</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.privatehealth.gov.au/" target="_blank" rel="noopener">Private Health (Australian Government)</a>
+              <div class="resource-desc">Government comparison tool for private health insurance. Search and compare policies without commercial bias.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ombudsman.gov.au/How-we-can-help/private-health-insurance" target="_blank" rel="noopener">Private Health Insurance Ombudsman (PHIO)</a>
+              <div class="resource-desc">Free complaints service for disputes with private health insurers.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/how-to-do-a-financial-health-check/health-insurance" target="_blank" rel="noopener">Moneysmart &mdash; Health Insurance</a>
+              <div class="resource-desc">Guidance on whether private health insurance makes financial sense given your circumstances.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="life-insurance">
+        <div class="category-head">
+          <h3>Life Insurance</h3>
+          <span class="anchor-tag">#life-insurance</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/how-to-do-a-financial-health-check/life-insurance" target="_blank" rel="noopener">Moneysmart &mdash; Life Insurance</a>
+              <div class="resource-desc">What life insurance covers, how much cover you may need, and how to compare policies.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">AFCA &mdash; Insurance Disputes</a>
+              <div class="resource-desc">Free, independent dispute resolution if a life insurance claim is denied or delayed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="funeral-insurance">
+        <div class="category-head">
+          <h3>Funeral Insurance</h3>
+          <span class="anchor-tag">#funeral-insurance</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/how-to-do-a-financial-health-check/funeral-insurance" target="_blank" rel="noopener">Moneysmart &mdash; Funeral Insurance</a>
+              <div class="resource-desc">Important consumer warnings about funeral insurance, including policies where total premiums can exceed the payout.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">AFCA &mdash; Insurance Disputes</a>
+              <div class="resource-desc">Disputes about funeral insurance claims or policy terms.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="doctors-specialists">
+        <div class="category-head">
+          <h3>Doctors and Specialists</h3>
+          <span class="anchor-tag">#doctors-specialists</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.healthdirect.gov.au/australian-health-services" target="_blank" rel="noopener">HealthDirect &mdash; Find a Health Service</a>
+              <div class="resource-desc">Find bulk billing GPs, specialists and health services near you. Australian Government funded.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/medicare" target="_blank" rel="noopener">Services Australia &mdash; Medicare</a>
+              <div class="resource-desc">What Medicare covers, how to claim, and how to understand your Medicare Safety Net.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/health-care-card" target="_blank" rel="noopener">Services Australia &mdash; Health Care Card</a>
+              <div class="resource-desc">Concession card for reduced cost health services and PBS medicines for eligible people.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="medications">
+        <div class="category-head">
+          <h3>Medications, Chemist, Health Shop</h3>
+          <span class="anchor-tag">#medications</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.pbs.gov.au/" target="_blank" rel="noopener">Pharmaceutical Benefits Scheme (PBS)</a>
+              <div class="resource-desc">Search subsidised medicines and check if a concession discount applies to your prescription.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/concession-and-health-care-cards" target="_blank" rel="noopener">Services Australia &mdash; Concession Cards</a>
+              <div class="resource-desc">Access cheaper PBS medicines and other health cost reductions through a Centrelink concession card.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="dentist">
+        <div class="category-head">
+          <h3>Dentist</h3>
+          <span class="anchor-tag">#dentist</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/child-dental-benefits-schedule" target="_blank" rel="noopener">Services Australia &mdash; Child Dental Benefits Schedule</a>
+              <div class="resource-desc">Up to $1,095 in dental services over two years for eligible children aged 0&ndash;17.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.health.nsw.gov.au/oralhealth/Pages/default.aspx" target="_blank" rel="noopener">NSW Health &mdash; Community Oral Health Services</a>
+              <div class="resource-desc">Free and low-cost dental care for eligible adults and children through NSW public dental services.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="optometrist">
+        <div class="category-head">
+          <h3>Optometrist / Glasses</h3>
+          <span class="anchor-tag">#optometrist</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/optometry" target="_blank" rel="noopener">Services Australia &mdash; Optometry</a>
+              <div class="resource-desc">What Medicare covers for eye examinations and how often you can claim optometry services.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.healthdirect.gov.au/optometrist" target="_blank" rel="noopener">HealthDirect &mdash; Find an Optometrist</a>
+              <div class="resource-desc">Locate optometrists near you, including bulk billing services where available.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="hearing-aids">
+        <div class="category-head">
+          <h3>Hearing Aids</h3>
+          <span class="anchor-tag">#hearing-aids</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://hearingservices.gov.au/" target="_blank" rel="noopener">Australian Government Hearing Services Program</a>
+              <div class="resource-desc">Free or subsidised hearing services and devices for eligible Australians, including pensioners and veterans.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.hearing.com.au/" target="_blank" rel="noopener">Hearing Australia</a>
+              <div class="resource-desc">Government-funded hearing care services for eligible adults and children.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ndis.gov.au/" target="_blank" rel="noopener">NDIS &mdash; Hearing Supports</a>
+              <div class="resource-desc">NDIS may fund hearing devices and related supports for eligible participants with permanent hearing loss.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /insurance-health -->
+
+
+    <!-- ══════════════════════════════════════════
+         FOOD & PERSONAL
+    ══════════════════════════════════════════ -->
+    <div class="section" id="food-personal">
+      <div class="section-header">
+        <h2>Food &amp; Personal</h2>
+      </div>
+
+      <div class="category" id="food-groceries">
+        <div class="category-head">
+          <h3>Food and Groceries</h3>
+          <span class="anchor-tag">#food-groceries</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.foodbank.org.au/nsw/" target="_blank" rel="noopener">Foodbank NSW &amp; ACT</a>
+              <div class="resource-desc">Emergency food relief for people experiencing food insecurity. Find food relief near you.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.secondbite.org/" target="_blank" rel="noopener">SecondBite</a>
+              <div class="resource-desc">Distributes rescued food to community food programs across NSW. Find local services.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.salvationarmy.org.au/need-help/financial-assistance/" target="_blank" rel="noopener">Salvation Army &mdash; Emergency Assistance</a>
+              <div class="resource-desc">Emergency food hampers, vouchers and community meals available through local Salvos centres.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/budgeting/budget-planner" target="_blank" rel="noopener">Moneysmart &mdash; Budget Planner</a>
+              <div class="resource-desc">Plan and track grocery spending as part of an overall household budget.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="takeaway-dining">
+        <div class="category-head">
+          <h3>Lunches, Takeaway, Dining</h3>
+          <span class="anchor-tag">#takeaway-dining</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/budgeting/budget-planner" target="_blank" rel="noopener">Moneysmart &mdash; Budget Planner</a>
+              <div class="resource-desc">Review discretionary food spending and identify savings opportunities in your overall budget.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="clothing-shoes">
+        <div class="category-head">
+          <h3>Clothing and Shoes</h3>
+          <span class="anchor-tag">#clothing-shoes</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.salvationarmy.org.au/" target="_blank" rel="noopener">Salvation Army &mdash; Emergency Relief</a>
+              <div class="resource-desc">Emergency assistance for clothing needs, including vouchers and op-shop access.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.givit.org.au/" target="_blank" rel="noopener">GIVIT</a>
+              <div class="resource-desc">Request clothing and essential items through this not-for-profit platform connecting donors with those in need.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="personal-care">
+        <div class="category-head">
+          <h3>Haircuts and Personal Care</h3>
+          <span class="anchor-tag">#personal-care</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/budgeting" target="_blank" rel="noopener">Moneysmart &mdash; Budgeting</a>
+              <div class="resource-desc">Tips and tools for managing discretionary personal care expenses within a household budget.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="white-goods">
+        <div class="category-head">
+          <h3>White Goods, Linen, Crockery</h3>
+          <span class="anchor-tag">#white-goods</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://goodshepherd.org.au/money/nils/" target="_blank" rel="noopener">Good Shepherd &mdash; No Interest Loans Scheme (NILS)</a>
+              <div class="resource-desc">Interest-free loans of up to $2,000 for essential household goods like fridges, washing machines and beds.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://goodshepherd.org.au/money/stepup-loan/" target="_blank" rel="noopener">Good Shepherd &mdash; StepUP Loan</a>
+              <div class="resource-desc">Low interest loans of up to $3,000 for people on low incomes needing essential household items.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.givit.org.au/" target="_blank" rel="noopener">GIVIT &mdash; Household Items</a>
+              <div class="resource-desc">Request household goods including white goods, linen and crockery through this community platform.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /food-personal -->
+
+
+    <!-- ══════════════════════════════════════════
+         SAVINGS & SUPERANNUATION
+    ══════════════════════════════════════════ -->
+    <div class="section" id="savings-super">
+      <div class="section-header">
+        <h2>Savings &amp; Superannuation</h2>
+      </div>
+
+      <div class="category" id="savings">
+        <div class="category-head">
+          <h3>Savings</h3>
+          <span class="anchor-tag">#savings</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/saving" target="_blank" rel="noopener">Moneysmart &mdash; Saving</a>
+              <div class="resource-desc">Practical tips and strategies for building a savings habit, including goal setting and high-interest accounts.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/budgeting/budget-planner" target="_blank" rel="noopener">Moneysmart &mdash; Budget Planner</a>
+              <div class="resource-desc">Build savings into your household budget using this free planning tool.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="superannuation-contributions">
+        <div class="category-head">
+          <h3>Superannuation &mdash; Voluntary Contributions</h3>
+          <span class="anchor-tag">#superannuation-contributions</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families" target="_blank" rel="noopener">ATO &mdash; Superannuation</a>
+              <div class="resource-desc">Information on voluntary contributions, salary sacrifice, contribution caps and tax implications.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/superannuation" target="_blank" rel="noopener">Moneysmart &mdash; Superannuation</a>
+              <div class="resource-desc">Plain English guide to how super works, including how to boost your balance and find lost super.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /savings-super -->
+
+
+    <!-- ══════════════════════════════════════════
+         LIFESTYLE
+    ══════════════════════════════════════════ -->
+    <div class="section" id="lifestyle">
+      <div class="section-header">
+        <h2>Lifestyle</h2>
+      </div>
+
+      <div class="category" id="newspapers-magazines">
+        <div class="category-head">
+          <h3>Newspapers and Magazines</h3>
+          <span class="anchor-tag">#newspapers-magazines</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.sl.nsw.gov.au/visit-us/services" target="_blank" rel="noopener">State Library of NSW &mdash; Library Services</a>
+              <div class="resource-desc">Free access to newspapers, magazines and digital news services through your public library membership.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="online-subscriptions">
+        <div class="category-head">
+          <h3>Online Subscriptions</h3>
+          <span class="anchor-tag">#online-subscriptions</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.accc.gov.au/consumers/buying-products-and-services/subscriptions" target="_blank" rel="noopener">ACCC &mdash; Subscriptions</a>
+              <div class="resource-desc">Your rights when cancelling online subscriptions, including free trials that convert to paid plans.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="gym-membership">
+        <div class="category-head">
+          <h3>Gym Membership</h3>
+          <span class="anchor-tag">#gym-membership</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.activeandhealthy.nsw.gov.au/" target="_blank" rel="noopener">Active and Healthy NSW</a>
+              <div class="resource-desc">Free and low-cost physical activity programs for NSW residents, including community walking groups.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairtrading.nsw.gov.au/consumers/resolving-a-problem" target="_blank" rel="noopener">NSW Fair Trading &mdash; Gym Contracts</a>
+              <div class="resource-desc">Consumer rights for gym memberships, including cancellation rights and fee disputes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="sport-hobbies">
+        <div class="category-head">
+          <h3>Sport / Hobbies</h3>
+          <span class="anchor-tag">#sport-hobbies</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://sport.nsw.gov.au/" target="_blank" rel="noopener">Sport NSW</a>
+              <div class="resource-desc">Information on community sport programs, grants and free activities available across NSW.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/transaction/apply-for-an-active-kids-voucher" target="_blank" rel="noopener">Service NSW &mdash; Active Kids</a>
+              <div class="resource-desc">Vouchers for sport and active recreation costs for school-aged children.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="celebrations">
+        <div class="category-head">
+          <h3>Celebrations &mdash; Birthdays / Cultural / Christmas</h3>
+          <span class="anchor-tag">#celebrations</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.salvationarmy.org.au/" target="_blank" rel="noopener">Salvation Army &mdash; Christmas Assistance</a>
+              <div class="resource-desc">Toy and gift assistance programs for families experiencing hardship at Christmas.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/budgeting" target="_blank" rel="noopener">Moneysmart &mdash; Budgeting for Celebrations</a>
+              <div class="resource-desc">Tips on planning and saving for seasonal and cultural celebrations without going into debt.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="gifts">
+        <div class="category-head">
+          <h3>Gifts</h3>
+          <span class="anchor-tag">#gifts</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/budgeting" target="_blank" rel="noopener">Moneysmart &mdash; Budgeting</a>
+              <div class="resource-desc">Include gifts as a planned budget line to avoid unplanned spending throughout the year.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="donations">
+        <div class="category-head">
+          <h3>Donations</h3>
+          <span class="anchor-tag">#donations</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/gifts-and-donations" target="_blank" rel="noopener">ATO &mdash; Gifts and Donations</a>
+              <div class="resource-desc">Which donations are tax deductible and how to claim them. Check if a charity is a Deductible Gift Recipient (DGR).</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.acnc.gov.au/charity" target="_blank" rel="noopener">ACNC &mdash; Charity Register</a>
+              <div class="resource-desc">Check whether a charity is registered with the Australian Charities and Not-for-profits Commission.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="entertainment">
+        <div class="category-head">
+          <h3>Entertainment</h3>
+          <span class="anchor-tag">#entertainment</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.sl.nsw.gov.au/visit-us/services" target="_blank" rel="noopener">State Library of NSW &mdash; Free Resources</a>
+              <div class="resource-desc">Free access to ebooks, audiobooks, films and events through your public library card.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="holidays">
+        <div class="category-head">
+          <h3>Holidays</h3>
+          <span class="anchor-tag">#holidays</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/budgeting" target="_blank" rel="noopener">Moneysmart &mdash; Saving for a Holiday</a>
+              <div class="resource-desc">How to plan and save for a holiday, including setting up a dedicated savings account.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="pets-food">
+        <div class="category-head">
+          <h3>Pet &mdash; Food, Accessories</h3>
+          <span class="anchor-tag">#pets-food</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.rspcansw.org.au/" target="_blank" rel="noopener">RSPCA NSW</a>
+              <div class="resource-desc">Information on rehoming and low-cost resources for pet owners experiencing financial difficulty.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="pets-vet">
+        <div class="category-head">
+          <h3>Pet &mdash; Insurance, Vet and Medications</h3>
+          <span class="anchor-tag">#pets-vet</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.rspcansw.org.au/what-we-do/our-animal-hospitals/" target="_blank" rel="noopener">RSPCA NSW &mdash; Animal Hospitals</a>
+              <div class="resource-desc">Low-cost veterinary services for eligible pet owners through RSPCA NSW clinics.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/how-to-do-a-financial-health-check/insurance" target="_blank" rel="noopener">Moneysmart &mdash; Insurance Overview</a>
+              <div class="resource-desc">General guidance on comparing and understanding pet insurance policies before committing.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="pet-registration">
+        <div class="category-head">
+          <h3>Pet &mdash; Registrations</h3>
+          <span class="anchor-tag">#pet-registration</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.petregistry.nsw.gov.au/" target="_blank" rel="noopener">NSW Pet Registry</a>
+              <div class="resource-desc">Register and manage your pet's microchip and lifetime registration. Check concession rates.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="gambling">
+        <div class="category-head">
+          <h3>Lotto, Pokies, Online, Gambling &amp; Other</h3>
+          <span class="anchor-tag">#gambling</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.gamblinghelponline.org.au/" target="_blank" rel="noopener">Gambling Help Online</a>
+              <div class="resource-desc">Free, confidential counselling and support for people affected by gambling. Available 24/7 online and by phone.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.gamblinghelp.nsw.gov.au/" target="_blank" rel="noopener">NSW Gambling Help</a>
+              <div class="resource-desc">Free face-to-face counselling, financial counselling and support services across NSW.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="smoking">
+        <div class="category-head">
+          <h3>Cigarettes, Tobacco, Vapes</h3>
+          <span class="anchor-tag">#smoking</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.quit.org.au/" target="_blank" rel="noopener">Quit.org.au</a>
+              <div class="resource-desc">Free resources, guides and Quitline support to help people quit smoking and vaping.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.quit.nsw.gov.au/" target="_blank" rel="noopener">Quitline NSW &mdash; 13 78 48</a>
+              <div class="resource-desc">Free telephone counselling service to help quit smoking. Available seven days a week.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="alcohol">
+        <div class="category-head">
+          <h3>Alcohol</h3>
+          <span class="anchor-tag">#alcohol</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://hellosundaymorning.org/" target="_blank" rel="noopener">Hello Sunday Morning (Daybreak)</a>
+              <div class="resource-desc">Free app and online community for people wanting to change their relationship with alcohol. No sign-in required.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.smartrecoveryaustralia.com.au/" target="_blank" rel="noopener">SMART Recovery Australia</a>
+              <div class="resource-desc">Free community support groups using evidence-based tools to manage alcohol and substance issues.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.health.nsw.gov.au/aod/Pages/druginfo.aspx" target="_blank" rel="noopener">NSW Health &mdash; Alcohol and Drug Information Service (ADIS)</a>
+              <div class="resource-desc">Free phone counselling on alcohol concerns. Call 1800 250 015, available 24 hours.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /lifestyle -->
+
+
+    <!-- ══════════════════════════════════════════
+         ASSETS
+    ══════════════════════════════════════════ -->
+    <div class="section" id="assets">
+      <div class="section-header">
+        <h2>Assets</h2>
+      </div>
+
+      <div class="category" id="motor-vehicle">
+        <div class="category-head">
+          <h3>Motor Vehicle</h3>
+          <span class="anchor-tag">#motor-vehicle</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ppsr.gov.au/" target="_blank" rel="noopener">PPSR &mdash; Personal Property Securities Register</a>
+              <div class="resource-desc">Check whether a vehicle has finance owing, been reported stolen or written off before purchase.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/transaction/check-vehicle-registration" target="_blank" rel="noopener">Service NSW &mdash; Check Vehicle Registration</a>
+              <div class="resource-desc">Verify current registration status of any NSW registered vehicle.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="boat">
+        <div class="category-head">
+          <h3>Boat</h3>
+          <span class="anchor-tag">#boat</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.transport.nsw.gov.au/operations/maritime/recreational-vessels/registrations" target="_blank" rel="noopener">Transport for NSW &mdash; Boat Registration</a>
+              <div class="resource-desc">Register, renew or transfer boat registration in NSW, including fees and exemptions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="caravan">
+        <div class="category-head">
+          <h3>Caravan</h3>
+          <span class="anchor-tag">#caravan</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/transaction/renew-vehicle-registration" target="_blank" rel="noopener">Service NSW &mdash; Vehicle Registration</a>
+              <div class="resource-desc">Renew, transfer or check registration status of a caravan in NSW.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ppsr.gov.au/" target="_blank" rel="noopener">PPSR &mdash; Personal Property Securities Register</a>
+              <div class="resource-desc">Check whether a caravan has finance owing before purchase or sale.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="motorbike">
+        <div class="category-head">
+          <h3>Motorbike</h3>
+          <span class="anchor-tag">#motorbike</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.service.nsw.gov.au/transaction/renew-vehicle-registration" target="_blank" rel="noopener">Service NSW &mdash; Vehicle Registration</a>
+              <div class="resource-desc">Registration renewal and status checks for motorcycles and motorbikes.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.sira.nsw.gov.au/insurance-cover-in-nsw/CTP-insurance" target="_blank" rel="noopener">SIRA &mdash; Motorbike CTP Insurance</a>
+              <div class="resource-desc">Compulsory Third Party insurance requirements and options for NSW motorbike owners.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="investments-asset">
+        <div class="category-head">
+          <h3>Investments</h3>
+          <span class="anchor-tag">#investments-asset</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/investing" target="_blank" rel="noopener">Moneysmart &mdash; Investing</a>
+              <div class="resource-desc">Understanding different investment types, risks and how to find a licensed financial adviser.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/investments-and-assets" target="_blank" rel="noopener">ATO &mdash; Investments and Assets</a>
+              <div class="resource-desc">Tax obligations when selling or receiving income from investments.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="savings-asset">
+        <div class="category-head">
+          <h3>Savings (bank accounts)</h3>
+          <span class="anchor-tag">#savings-asset</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/saving/savings-accounts" target="_blank" rel="noopener">Moneysmart &mdash; Savings Accounts</a>
+              <div class="resource-desc">Comparing savings account types, interest rates and fee structures.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">AFCA &mdash; Banking Disputes</a>
+              <div class="resource-desc">Free dispute resolution for problems with savings accounts, term deposits or banking fees.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="superannuation-asset">
+        <div class="category-head">
+          <h3>Superannuation</h3>
+          <span class="anchor-tag">#superannuation-asset</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/find-and-consolidate-lost-super" target="_blank" rel="noopener">ATO &mdash; Find and Consolidate Lost Super</a>
+              <div class="resource-desc">Use ATO online services or myGov to find unclaimed or lost super and consolidate into one fund.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/superannuation" target="_blank" rel="noopener">Moneysmart &mdash; Superannuation</a>
+              <div class="resource-desc">Understanding your super balance, investment options and accessing super in hardship.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">AFCA &mdash; Super Disputes</a>
+              <div class="resource-desc">Free dispute resolution for superannuation complaints including denied insurance claims within super.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="shares">
+        <div class="category-head">
+          <h3>Shares</h3>
+          <span class="anchor-tag">#shares</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www2.asx.com.au/" target="_blank" rel="noopener">ASX &mdash; Australian Securities Exchange</a>
+              <div class="resource-desc">Check current and historical share prices for ASX-listed companies.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/investing/shares" target="_blank" rel="noopener">Moneysmart &mdash; Shares</a>
+              <div class="resource-desc">How shares work, the risks involved and what to consider before buying or selling.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/investments-and-assets/investing-in-shares" target="_blank" rel="noopener">ATO &mdash; Shares and Capital Gains</a>
+              <div class="resource-desc">Tax treatment of dividends, franking credits and capital gains when selling shares.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="household-contents">
+        <div class="category-head">
+          <h3>Household Contents (sale value)</h3>
+          <span class="anchor-tag">#household-contents</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/home-insurance" target="_blank" rel="noopener">Moneysmart &mdash; Home and Contents Insurance</a>
+              <div class="resource-desc">Guidance on estimating the replacement or sale value of household contents for insurance purposes.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">AFCA &mdash; Insurance Disputes</a>
+              <div class="resource-desc">Dispute resolution if an insurer's valuation of your contents is contested.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="tools-of-trade">
+        <div class="category-head">
+          <h3>Tools of Trade</h3>
+          <span class="anchor-tag">#tools-of-trade</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/tools-equipment-and-other-assets" target="_blank" rel="noopener">ATO &mdash; Tools and Equipment</a>
+              <div class="resource-desc">Tax deductions for work tools and equipment, including depreciation rules for higher-value items.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairwork.gov.au/pay-and-wages/deductions-and-money-your-employer-owes-you/tools-and-equipment" target="_blank" rel="noopener">Fair Work &mdash; Tools and Equipment</a>
+              <div class="resource-desc">Employer obligations around providing or reimbursing employees for tools required for work.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" id="valuables">
+        <div class="category-head">
+          <h3>Valuables (Artwork, Jewellery etc.)</h3>
+          <span class="anchor-tag">#valuables</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/home-insurance" target="_blank" rel="noopener">Moneysmart &mdash; Contents Insurance for Valuables</a>
+              <div class="resource-desc">How to ensure high-value items like jewellery and artwork are adequately covered under a contents policy.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/" target="_blank" rel="noopener">AFCA &mdash; Insurance Disputes</a>
+              <div class="resource-desc">Dispute resolution if a claim on artwork, jewellery or other valuables is denied or undervalued.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /assets -->
+
+
+    <!-- ══════════════════════════════════════════
+         CREDITORS / DEBTS / LIABILITIES
+    ══════════════════════════════════════════ -->
+    <div class="section" id="debts">
+      <div class="section-header">
+        <h2>Creditors / Debts / Liabilities</h2>
+      </div>
+
+      <!-- PROPERTY LOANS -->
+      <div class="category" id="property-loans">
+        <div class="category-head">
+          <h3>Property Loans (Residential or Investment)</h3>
+          <span class="anchor-tag">#property-loans</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/home-loans/mortgage-stress" target="_blank" rel="noopener">Moneysmart &mdash; Mortgage Stress</a>
+              <div class="resource-desc">What to do if you are struggling to meet mortgage repayments, including how to approach your lender.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/make-a-complaint/financial-difficulty" target="_blank" rel="noopener">AFCA &mdash; Financial Difficulty Complaints</a>
+              <div class="resource-desc">Free, independent dispute resolution if your lender has not responded fairly to a hardship request.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.australianbankers.org.au/banking-code-of-practice" target="_blank" rel="noopener">Australian Banking Association &mdash; Banking Code of Practice</a>
+              <div class="resource-desc">The Code requires banks to consider hardship requests fairly. Understand your rights before contacting your lender.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.revenue.nsw.gov.au/grants-schemes/first-home-buyer" target="_blank" rel="noopener">Revenue NSW &mdash; First Home Buyer Assistance</a>
+              <div class="resource-desc">Stamp duty concessions and grants that may be relevant when reviewing property loan obligations.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECURED LOANS -->
+      <div class="category" id="secured-loans">
+        <div class="category-head">
+          <h3>Loans Secured by Other Assets (Vehicles, Consumer Leases, Pawned Goods)</h3>
+          <span class="anchor-tag">#secured-loans</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/car-loans" target="_blank" rel="noopener">Moneysmart &mdash; Car Loans</a>
+              <div class="resource-desc">Understanding secured vehicle finance, including what happens if repayments are missed and repossession rights.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ppsr.gov.au/" target="_blank" rel="noopener">PPSR &mdash; Personal Property Securities Register</a>
+              <div class="resource-desc">Check what security interests are registered against a vehicle or other personal property asset.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/make-a-complaint/financial-difficulty" target="_blank" rel="noopener">AFCA &mdash; Financial Difficulty Complaints</a>
+              <div class="resource-desc">Dispute resolution if a lender has not responded appropriately to a hardship application on a secured loan.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairtrading.nsw.gov.au/consumers/credit-loans-and-debt/pawnbrokers" target="_blank" rel="noopener">NSW Fair Trading &mdash; Pawnbrokers</a>
+              <div class="resource-desc">Your rights when dealing with pawnbrokers, including redemption periods and reclaiming pawned goods.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNSECURED DEBTS -->
+      <div class="category" id="unsecured-debts">
+        <div class="category-head">
+          <h3>Unsecured Debts (Credit Cards, BNPL, SACC, Personal Loans, Pay Advance)</h3>
+          <span class="anchor-tag">#unsecured-debts</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/managing-debt" target="_blank" rel="noopener">Moneysmart &mdash; Managing Debt</a>
+              <div class="resource-desc">Strategies for paying down credit cards and personal loans, including snowball and avalanche methods.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/make-a-complaint/financial-difficulty" target="_blank" rel="noopener">AFCA &mdash; Financial Difficulty</a>
+              <div class="resource-desc">Free dispute resolution where a credit card provider or lender has not responded fairly to hardship requests.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.asic.gov.au/for-consumers/credit/" target="_blank" rel="noopener">ASIC &mdash; Credit and Loans</a>
+              <div class="resource-desc">Regulator information on credit products, lender obligations under the National Consumer Credit Protection Act, and your rights.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/borrowing-and-credit/buy-now-pay-later" target="_blank" rel="noopener">Moneysmart &mdash; Buy Now Pay Later</a>
+              <div class="resource-desc">How BNPL products work, the risks of using multiple services, and what to do if repayments fall behind.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/borrowing-and-credit/payday-loans" target="_blank" rel="noopener">Moneysmart &mdash; Small Amount Credit Contracts (SACC)</a>
+              <div class="resource-desc">Understanding high-cost short-term loans (payday loans), your rights and alternatives including NILS.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://goodshepherd.org.au/money/nils/" target="_blank" rel="noopener">Good Shepherd &mdash; No Interest Loans Scheme (NILS)</a>
+              <div class="resource-desc">Interest-free loans as a safe alternative to payday lenders and pay advance products for eligible people.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOVERNMENT DEBTS -->
+      <div class="category" id="government-debts">
+        <div class="category-head">
+          <h3>Government Debts (Centrelink, Fines, Court, Tax, HELP, Child Support)</h3>
+          <span class="anchor-tag">#government-debts</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/repaying-a-centrelink-debt" target="_blank" rel="noopener">Services Australia &mdash; Repaying a Centrelink Debt</a>
+              <div class="resource-desc">Options for repaying a Centrelink debt, including payment arrangements and special circumstances reviews.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/paying-the-ato/if-you-can-t-pay-on-time" target="_blank" rel="noopener">ATO &mdash; If You Can't Pay On Time</a>
+              <div class="resource-desc">ATO options for people who cannot pay a tax debt, including payment plans, interest-free periods and hardship provisions.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ato.gov.au/individuals-and-families/study-and-training/hecs-help" target="_blank" rel="noopener">ATO &mdash; HELP Debt Repayment</a>
+              <div class="resource-desc">How HELP (HECS) repayments work through the tax system and options if your income changes.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.revenue.nsw.gov.au/fines/paying-a-fine/financial-hardship" target="_blank" rel="noopener">Revenue NSW &mdash; Fines and Financial Hardship</a>
+              <div class="resource-desc">Payment plans, Work and Development Orders (WDO), and hardship options for NSW government fines and court fines.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.legalaid.nsw.gov.au/what-legal-aid-covers/civil-law/fines" target="_blank" rel="noopener">Legal Aid NSW &mdash; Fines</a>
+              <div class="resource-desc">Free legal advice on contesting fines, applying for time-to-pay and Work and Development Orders.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.servicesaustralia.gov.au/child-support-debt" target="_blank" rel="noopener">Services Australia &mdash; Child Support Debt</a>
+              <div class="resource-desc">Options for managing unpaid child support, including payment plans and objections to assessments.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UTILITY ARREARS -->
+      <div class="category" id="utility-arrears">
+        <div class="category-head">
+          <h3>Arrears of Current Utilities (Electricity, Gas, Water, Telcos, Council Rates)</h3>
+          <span class="anchor-tag">#utility-arrears</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.ewon.com.au/page/consumer-resources/cant-pay-your-bill" target="_blank" rel="noopener">Energy &amp; Water Ombudsman NSW &mdash; Can't Pay Your Bill</a>
+              <div class="resource-desc">Rights and options when you have fallen behind on electricity, gas or water bills, including hardship programs and payment plans.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.energy.nsw.gov.au/households/rebates-and-assistance/energy-accounts-payment-assistance" target="_blank" rel="noopener">NSW Government &mdash; Energy Accounts Payment Assistance (EAPA)</a>
+              <div class="resource-desc">Vouchers of up to $1,600 per year to help eligible households pay electricity and gas arrears through community organisations.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.tio.com.au/complaints/cant-pay-your-bill" target="_blank" rel="noopener">Telecommunications Industry Ombudsman &mdash; Can't Pay Your Bill</a>
+              <div class="resource-desc">Options when behind on a telco bill, including hardship programs and payment arrangements telcos must offer.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.revenue.nsw.gov.au/help-centre/financial-hardship" target="_blank" rel="noopener">Revenue NSW &mdash; Council Rates Hardship</a>
+              <div class="resource-desc">Payment plans and hardship provisions for overdue council rates administered through Revenue NSW.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEBT COLLECTORS -->
+      <div class="category" id="debt-collectors">
+        <div class="category-head">
+          <h3>Debt Collectors</h3>
+          <span class="anchor-tag">#debt-collectors</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.accc.gov.au/consumers/credit-debt-and-banking/debt-collection" target="_blank" rel="noopener">ACCC &mdash; Debt Collection Guidelines</a>
+              <div class="resource-body">What debt collectors can and cannot do, including contact frequency limits, harassment rules and your right to dispute a debt.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.fairtrading.nsw.gov.au/consumers/credit-loans-and-debt/debt-collectors" target="_blank" rel="noopener">NSW Fair Trading &mdash; Debt Collectors</a>
+              <div class="resource-desc">NSW-specific rules for debt collector conduct and how to lodge a complaint about a debt collection agency.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/make-a-complaint" target="_blank" rel="noopener">AFCA &mdash; Debt Collection Complaints</a>
+              <div class="resource-desc">If a debt collector is acting on behalf of a financial services firm, AFCA can investigate complaints about their conduct.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afca.org.au/make-a-complaint/credit-reporting" target="_blank" rel="noopener">AFCA &mdash; Credit Reporting Complaints</a>
+              <div class="resource-desc">Dispute incorrect credit file listings that may have been placed by a debt collector or creditor.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.oaic.gov.au/privacy/your-privacy-rights/credit-reporting" target="_blank" rel="noopener">Office of the Australian Information Commissioner &mdash; Credit Reporting</a>
+              <div class="resource-desc">Your rights around credit reporting, accessing your credit file and correcting errors.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANKRUPTCY & FORMAL OPTIONS -->
+      <div class="category" id="formal-debt-options">
+        <div class="category-head">
+          <h3>Formal Debt Options (Bankruptcy, Debt Agreements, Insolvency)</h3>
+          <span class="anchor-tag">#formal-debt-options</span>
+        </div>
+        <div class="resources">
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://www.afsa.gov.au/insolvency/i-cant-pay-my-debts" target="_blank" rel="noopener">Australian Financial Security Authority (AFSA)</a>
+              <div class="resource-desc">Official government information on bankruptcy, debt agreements (Part IX) and personal insolvency agreements as formal debt resolution options.</div>
+            </div>
+          </div>
+          <div class="resource-item">
+            <span class="resource-dot"></span>
+            <div class="resource-body">
+              <a href="https://moneysmart.gov.au/managing-debt/bankruptcy" target="_blank" rel="noopener">Moneysmart &mdash; Bankruptcy</a>
+              <div class="resource-desc">Plain English explanation of bankruptcy, what it means for your assets, income and credit file, and alternatives to consider first.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /debts -->
+
+  </main>
+</div><!-- /page -->
+
+<footer>
+  <strong>Community SOS Central Coast</strong> &mdash; Financial Counselling Resources &mdash; All links are to independent government, regulatory or community sector websites. This page does not link to commercial services. Last reviewed March 2026.
+</footer>
+
+</body>
+</html>
